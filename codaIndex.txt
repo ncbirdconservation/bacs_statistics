@@ -1,0 +1,8 @@
+alpha.p	1	1000
+alpha.psi	1001	2000
+beta.psi	2001	3000
+beta1.p	3001	4000
+beta2.p	4001	5000
+deviance	5001	6000
+mean.p	6001	7000
+occ.fs	7001	8000

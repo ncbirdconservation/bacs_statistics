@@ -1,0 +1,50 @@
+display(log)
+check(C:/data/@projects/bacs_surveys/analysis/heat_map/r/model.txt)
+model is syntactically correct
+data(C:/data/@projects/bacs_surveys/analysis/heat_map/r/data.txt)
+data loaded
+compile(3)
+model compiled
+inits(1,C:/data/@projects/bacs_surveys/analysis/heat_map/r/inits1.txt)
+chain initialized but other chain(s) contain uninitialized variables
+inits(2,C:/data/@projects/bacs_surveys/analysis/heat_map/r/inits2.txt)
+chain initialized but other chain(s) contain uninitialized variables
+inits(3,C:/data/@projects/bacs_surveys/analysis/heat_map/r/inits3.txt)
+model is initialized
+gen.inits()
+command #Bugs:gen.inits cannot be executed (is greyed out)
+thin.updater(10)
+update(2000)
+set(alpha.psi)
+set(beta.psi)
+set(mean.p)
+set(occ.fs)
+set(alpha.p)
+set(beta1.p)
+set(beta2.p)
+set(deviance)
+dic.set()
+command #Bugs:dic.set cannot be executed (is greyed out)
+update(1000)
+coda(*,C:/data/@projects/bacs_surveys/analysis/heat_map/r/coda)
+stats(*)
+
+Node statistics
+	 node	 mean	 sd	 MC error	2.5%	median	97.5%	start	sample
+	alpha.p	-0.4348	0.2194	0.00556	-0.8595	-0.4368	-0.006876	2001	3000
+	alpha.psi	-6.247	0.5936	0.04353	-7.461	-6.208	-5.16	2001	3000
+	beta.psi	0.4197	0.04672	0.003422	0.3341	0.4166	0.5159	2001	3000
+	beta1.p	-0.5233	0.2134	0.004799	-0.9225	-0.5296	-0.09529	2001	3000
+	beta2.p	2.092	0.3972	0.008906	1.367	2.076	2.936	2001	3000
+	deviance	266.0	26.17	0.5769	222.1	263.4	324.1	2001	3000
+	mean.p	0.3942	0.05182	0.00131	0.2975	0.3925	0.4983	2001	3000
+	occ.fs	121.6	6.374	0.1395	112.0	121.0	136.0	2001	3000
+dic.stats()
+
+DIC
+history(*,C:/data/@projects/bacs_surveys/analysis/heat_map/r/history.odc)
+
+History
+
+save(C:/data/@projects/bacs_surveys/analysis/heat_map/r/log.odc)
+save(C:/data/@projects/bacs_surveys/analysis/heat_map/r/log.txt)
