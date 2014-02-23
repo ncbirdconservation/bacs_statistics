@@ -1,50 +1,54 @@
 display(log)
-check(C:/data/@projects/bacs_surveys/analysis/heat_map/r/model.txt)
+check(C:/data/@projects/bacs_surveys/analysis/bacs_statistics/model.txt)
 model is syntactically correct
-data(C:/data/@projects/bacs_surveys/analysis/heat_map/r/data.txt)
+data(C:/data/@projects/bacs_surveys/analysis/bacs_statistics/data.txt)
 data loaded
 compile(3)
 model compiled
-inits(1,C:/data/@projects/bacs_surveys/analysis/heat_map/r/inits1.txt)
+inits(1,C:/data/@projects/bacs_surveys/analysis/bacs_statistics/inits1.txt)
 chain initialized but other chain(s) contain uninitialized variables
-inits(2,C:/data/@projects/bacs_surveys/analysis/heat_map/r/inits2.txt)
+inits(2,C:/data/@projects/bacs_surveys/analysis/bacs_statistics/inits2.txt)
 chain initialized but other chain(s) contain uninitialized variables
-inits(3,C:/data/@projects/bacs_surveys/analysis/heat_map/r/inits3.txt)
+inits(3,C:/data/@projects/bacs_surveys/analysis/bacs_statistics/inits3.txt)
 model is initialized
 gen.inits()
 command #Bugs:gen.inits cannot be executed (is greyed out)
 thin.updater(10)
-update(2000)
+update(3000)
 set(alpha.psi)
-set(beta.psi)
+set(betahabqi.psi)
 set(mean.p)
 set(occ.fs)
 set(alpha.p)
 set(beta1.p)
 set(beta2.p)
+set(beta3.p)
+set(beta5.p)
 set(deviance)
 dic.set()
 command #Bugs:dic.set cannot be executed (is greyed out)
-update(1000)
-coda(*,C:/data/@projects/bacs_surveys/analysis/heat_map/r/coda)
+update(2000)
+coda(*,C:/data/@projects/bacs_surveys/analysis/bacs_statistics/coda)
 stats(*)
 
 Node statistics
 	 node	 mean	 sd	 MC error	2.5%	median	97.5%	start	sample
-	alpha.p	-0.4348	0.2194	0.00556	-0.8595	-0.4368	-0.006876	2001	3000
-	alpha.psi	-6.247	0.5936	0.04353	-7.461	-6.208	-5.16	2001	3000
-	beta.psi	0.4197	0.04672	0.003422	0.3341	0.4166	0.5159	2001	3000
-	beta1.p	-0.5233	0.2134	0.004799	-0.9225	-0.5296	-0.09529	2001	3000
-	beta2.p	2.092	0.3972	0.008906	1.367	2.076	2.936	2001	3000
-	deviance	266.0	26.17	0.5769	222.1	263.4	324.1	2001	3000
-	mean.p	0.3942	0.05182	0.00131	0.2975	0.3925	0.4983	2001	3000
-	occ.fs	121.6	6.374	0.1395	112.0	121.0	136.0	2001	3000
+	alpha.p	0.02645	0.2787	0.004893	-0.5143	0.02247	0.5856	3001	6000
+	alpha.psi	-6.334	0.5901	0.03207	-7.526	-6.324	-5.221	3001	6000
+	beta1.p	2.199	0.4007	0.00732	1.455	2.183	3.023	3001	6000
+	beta2.p	-0.5513	0.2154	0.003241	-0.9732	-0.5534	-0.1252	3001	6000
+	beta3.p	-0.06975	0.1906	0.002646	-0.4426	-0.07186	0.3078	3001	6000
+	beta5.p	-0.5138	0.1768	0.002918	-0.8572	-0.5132	-0.1786	3001	6000
+	betahabqi.psi	0.43	0.04631	0.002522	0.3434	0.4304	0.5236	3001	6000
+	deviance	262.1	24.45	0.4114	220.7	259.9	315.4	3001	6000
+	mean.p	0.5065	0.06838	0.001203	0.3742	0.5056	0.6424	3001	6000
+	occ.fs	124.1	6.452	0.109	114.0	123.0	139.0	3001	6000
 dic.stats()
 
 DIC
-history(*,C:/data/@projects/bacs_surveys/analysis/heat_map/r/history.odc)
+history(*,C:/data/@projects/bacs_surveys/analysis/bacs_statistics/history.odc)
 
 History
 
-save(C:/data/@projects/bacs_surveys/analysis/heat_map/r/log.odc)
-save(C:/data/@projects/bacs_surveys/analysis/heat_map/r/log.txt)
+save(C:/data/@projects/bacs_surveys/analysis/bacs_statistics/log.odc)
+save(C:/data/@projects/bacs_surveys/analysis/bacs_statistics/log.txt)

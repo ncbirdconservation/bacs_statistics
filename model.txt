@@ -3,31 +3,47 @@ model {
 
 # Priors
 alpha.psi ~ dnorm(0, 0.01)#intercept occupancy
-beta.psi ~ dnorm(0, 0.01)#hab quailty index occupancy
+betahabqi.psi ~ dnorm(0, 0.01)#BARE index occupancy
 alpha.p ~ dnorm(0, 0.01)#intercept detection
-beta1.p ~ dnorm(0, 0.01)#date effect detection
-beta2.p ~ dnorm(0, 0.01)#active effect detection
+beta1.p ~ dnorm(0, 0.01)#active effect detection
+beta2.p ~ dnorm(0, 0.01)#date effect detection
+beta3.p ~ dnorm(0, 0.01)#time effect detection
+beta5.p ~ dnorm(0, 0.01)#time^2 effect detection
+# beta4.p ~ dnorm(0, 0.01)#obs effect detection
+
+# #alternative priors
+# alpha.psi ~ dnorm(-1, 0.01)#intercept occupancy
+# betahabqi.psi ~ dnorm(-1, 0.01)#BARE index occupancy
+# alpha.p ~ dnorm(-1, 0.01)#intercept detection
+# beta1.p ~ dnorm(-1, 0.01)#active effect detection
+# beta2.p ~ dnorm(-1, 0.01)#date effect detection
+# beta3.p ~ dnorm(-1, 0.01)#time effect detection
+# beta5.p ~ dnorm(-1, 0.01)#time^2 effect detection
+# # beta4.p ~ dnorm(-1, 0.01)#obs effect detection
 
 # Likelihood
 # Ecological model for the partially observed true state
-for (i in 1:R) {
+for (i in 1:R) { #sites
    z[i] ~ dbern(psi[i])                # True occurrence z at site i
    psi[i] <- 1 / (1 + exp(-lpsi.lim[i]))
    lpsi.lim[i] <- min(999, max(-999, lpsi[i]))
-   lpsi[i] <- alpha.psi + beta.psi * habqi[i]
+   lpsi[i] <- alpha.psi + betahabqi.psi * habqi[i]
 
    # Observation model for the observations
-   for (j in 1:T) {
+   for (j in 1:T) { #detections
       y[i,j] ~ dbern(mu.p[i,j])# Detection-nondetection at i and j
       mu.p[i,j] <- z[i] * p[i,j]
       p[i,j] <- 1 / (1 + exp(-lp.lim[i,j]))
       lp.lim[i,j] <- min(999, max(-999, lp[i,j]))
-      lp[i,j] <- alpha.p + beta1.p * DATES[i] + beta2.p * active[i,j]
+      # lp[i,j] <- alpha.p + beta1.p * active[i,j] + beta2.p * DATES[i] + beta6.p * pow(DATES[i],2)  + beta3.p * TIMES[i] + beta5.p * pow(TIMES[i], 2)
+      lp[i,j] <- alpha.p + beta1.p * active[i,j] + beta2.p * DATES[i] + beta3.p * TIMES[i] + beta5.p * pow(TIMES[i], 2)
       } #j
    } #i
 
 # Derived quantities
 occ.fs <- sum(z[])                             # Number of occupied sites
 mean.p <- exp(alpha.p) / (1 + exp(alpha.p))    # Sort of average detection
+# mean.p <- exp(alpha.p) / (1 + exp(alpha.p))    # Sort of average detection
+# mean.p <- exp(alpha.p) / (1 + exp(alpha.p))    # Sort of average detection
 }
 
