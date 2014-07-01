@@ -6,17 +6,23 @@ data loaded
 compile(3)
 model compiled
 inits(1,C:/data/@projects/bacs_surveys/analysis/bacs_statistics/inits1.txt)
-chain initialized but other chain(s) contain uninitialized variables
+this chain contains uninitialized variables
 inits(2,C:/data/@projects/bacs_surveys/analysis/bacs_statistics/inits2.txt)
-chain initialized but other chain(s) contain uninitialized variables
+this chain contains uninitialized variables
 inits(3,C:/data/@projects/bacs_surveys/analysis/bacs_statistics/inits3.txt)
-model is initialized
+this chain contains uninitialized variables
 gen.inits()
-command #Bugs:gen.inits cannot be executed (is greyed out)
+initial values generated, model initialized
 thin.updater(10)
 update(3000)
 set(alpha.psi)
-set(betahabqi.psi)
+set(beta1.psi)
+set(beta2.psi)
+set(beta3.psi)
+set(beta4.psi)
+set(beta5.psi)
+set(beta6.psi)
+set(beta7.psi)
 set(mean.p)
 set(occ.fs)
 set(alpha.p)
@@ -33,16 +39,22 @@ stats(*)
 
 Node statistics
 	 node	 mean	 sd	 MC error	2.5%	median	97.5%	start	sample
-	alpha.p	0.02645	0.2787	0.004893	-0.5143	0.02247	0.5856	3001	6000
-	alpha.psi	-6.334	0.5901	0.03207	-7.526	-6.324	-5.221	3001	6000
-	beta1.p	2.199	0.4007	0.00732	1.455	2.183	3.023	3001	6000
-	beta2.p	-0.5513	0.2154	0.003241	-0.9732	-0.5534	-0.1252	3001	6000
-	beta3.p	-0.06975	0.1906	0.002646	-0.4426	-0.07186	0.3078	3001	6000
-	beta5.p	-0.5138	0.1768	0.002918	-0.8572	-0.5132	-0.1786	3001	6000
-	betahabqi.psi	0.43	0.04631	0.002522	0.3434	0.4304	0.5236	3001	6000
-	deviance	262.1	24.45	0.4114	220.7	259.9	315.4	3001	6000
-	mean.p	0.5065	0.06838	0.001203	0.3742	0.5056	0.6424	3001	6000
-	occ.fs	124.1	6.452	0.109	114.0	123.0	139.0	3001	6000
+	alpha.p	-0.05169	0.2732	0.006164	-0.5836	-0.05095	0.4798	3001	6000
+	alpha.psi	-9.804	1.673	0.1372	-12.89	-9.873	-6.526	3001	6000
+	beta1.p	2.097	0.3957	0.007534	1.367	2.074	2.921	3001	6000
+	beta1.psi	1.165	0.3284	0.01965	0.4867	1.161	1.826	3001	6000
+	beta2.p	-0.6557	0.2165	0.003909	-1.071	-0.6602	-0.222	3001	6000
+	beta2.psi	2.772	0.4191	0.03003	2.07	2.751	3.68	3001	6000
+	beta3.p	0.01636	0.1932	0.003384	-0.3726	0.01638	0.3847	3001	6000
+	beta3.psi	0.5695	0.3193	0.01733	-0.06241	0.5738	1.215	3001	6000
+	beta4.psi	-0.07233	0.5467	0.0409	-1.194	-0.06877	0.9215	3001	6000
+	beta5.p	-0.506	0.1687	0.003076	-0.8439	-0.5067	-0.1687	3001	6000
+	beta5.psi	0.05148	0.3408	0.01728	-0.6013	0.05319	0.744	3001	6000
+	beta6.psi	0.3975	0.4246	0.02933	-0.3861	0.3735	1.259	3001	6000
+	beta7.psi	0.1793	0.4064	0.02691	-0.605	0.1803	0.9847	3001	6000
+	deviance	274.5	27.11	0.5906	227.4	272.3	333.0	3001	6000
+	mean.p	0.4873	0.06699	0.001512	0.3581	0.4873	0.6177	3001	6000
+	occ.fs	128.3	8.016	0.1861	115.0	127.0	146.0	3001	6000
 dic.stats()
 
 DIC
